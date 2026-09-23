@@ -94,8 +94,8 @@ h1,h2,h3,h4,h5{margin:0;font-weight:700;line-height:1.3}
 /* ============================================================
    HERO
    ============================================================ */
-.hero{background:var(--white);padding:46px 0 40px}
-.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+/* .hero{background:var(--white);padding:46px 0 40px}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center} */
 .pill-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;max-width:470px}
 .pill{background:linear-gradient(180deg,var(--blue-1),var(--blue-2));color:#fff;font-size:11px;font-weight:500;
   padding:7px 16px;border-radius:30px;box-shadow:0 2px 5px rgba(47,86,165,.35);transition:transform .2s}
@@ -104,6 +104,48 @@ h1,h2,h3,h4,h5{margin:0;font-weight:700;line-height:1.3}
   padding:10px 20px;border-radius:4px;box-shadow:0 3px 8px rgba(33,184,199,.4)}
 .btn-demo:hover{background:var(--teal-dark)}
 .hero-art{justify-self:end;width:100%;max-width:420px}
+
+      .hero {
+    position: relative;
+    width: 100%;
+    min-height: 560px;
+
+    background-image: url("/Content/images/hero-background.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Content container */
+
+.hero .container {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 40px 35px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Left side text */
+
+.hero-content {
+    width: 48%;
+    max-width: 620px;
+
+    position: relative;
+    z-index: 5;
+}
 
 /* Eyebrow */
 
@@ -864,7 +906,7 @@ h1,h2,h3,h4,h5{margin:0;font-weight:700;line-height:1.3}
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="container">
-    <div>
+    <div class="hero-content">
       <div class="hero-eyebrow">
                 <span>Apparel / Garment Professionals</span>
             </div>
