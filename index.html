@@ -1531,6 +1531,7 @@ svg{
 .solution-card li{position:relative;padding-left:22px;color:#52677b;font-size:13px;line-height:1.65}
 .solution-card li:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 13%,transparent)}
 .solution-card li strong{display:block;margin-bottom:2px;color:#203c56;font-weight:800}
+.solution-card-layout{display:flex;align-items:center;gap:20px}.solution-logo{flex:0 0 100px;display:flex;justify-content:center;align-items:center}.solution-logo img{width:100%;max-width:100px;height:auto;object-fit:contain}.solution-content{flex:1;min-width:0}.solution-content h2{margin-top:12px}@media(max-width:768px){.solution-card-layout{gap:12px}.solution-logo{flex:0 0 65px}.solution-logo img{max-width:65px}}@media(max-width:480px){.solution-card-layout{flex-direction:column;align-items:flex-start}.solution-logo{flex:none;width:55px}.solution-logo img{max-width:55px}}
 /* .footer{display:flex;align-items:center;gap:9px;margin-top:auto;padding-top:24px;color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
 .footer span{width:7px;height:7px;border-radius:50%;background:var(--accent)} */
 @media(max-width:1050px){.solutions-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gripper{grid-column:1/-1}.gripper ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -1661,19 +1662,35 @@ svg{
     </header>
     <div class="solutions-grid">
        <article class="solution-card ie">
-        <div class="card-top"><span class="number">02</span><span class="tag">PRODUCTIVITY OPTIMISATION</span></div>
-        <h2>VOA</h2>
-        <h3>The Precision IE Tool</h3>
-        <ul>
-          <li><strong>Digital OB Chart Access:</strong>Digital OB charts access from any location.</li>
-          <li><strong>Production & Efficiency Analytics:</strong>Analytics ToSyncs targeted production with actual operator capacity and analyses efficiency performance across different styles.</li>
-          <li><strong>SMV / SAM Calculation:</strong>Simplifies Standard Minute Value (SMV) and Standard Allowed Minute (SAM) calculation modules.</li>
-          <li><strong>IE & Operator Skill Development:</strong>Provides training and skill improvement for Industrial Engineers (IEs) and operators.</li>
-        </ul>
-        <!-- <div class="footer"><span></span>Measure. Balance. Optimise.</div> -->
+          <div class="solution-card-layout">
+      
+              <!-- Left Side: VOA Logo -->
+              <div class="solution-logo">
+                  <img src="/images/VOA_logo_transparent.png" alt="VOA Logo">
+              </div>
+      
+              <!-- Right Side: Article Content -->
+              <div class="solution-content">
+                  <div class="card-top">
+                      <span class="number">01</span>
+                      <span class="tag">PRODUCTIVITY OPTIMISATION</span>
+                  </div>
+      
+                  <h2>VOA (Visual Operation Analytics)</h2>
+                  <h3>The Precision IE Tool</h3>
+      
+                  <ul>
+                      <li><strong>Digital OB Chart Access:</strong> Digital OB charts accessible from any location.</li>
+                      <li><strong>Production & Efficiency Analytics:</strong> Syncs targeted production with actual operator capacity and analyses efficiency across different styles.</li>
+                      <li><strong>SMV / SAM Calculation:</strong> Simplifies Standard Minute Value (SMV) and Standard Allowed Minute (SAM) calculations.</li>
+                      <li><strong>IE & Operator Skill Development:</strong> Provides training and skill improvement for Industrial Engineers (IEs) and operators.</li>
+                  </ul>
+              </div>
+      
+          </div>
       </article>
       <article class="solution-card gripper">
-        <div class="card-top"><span class="number">03</span><span class="tag">ENGINEERED MATERIAL FLOW</span></div>
+        <div class="card-top"><span class="number">02</span><span class="tag">ENGINEERED MATERIAL FLOW</span></div>
         <h2>UHS Gripper Movers</h2>
         <h3>Manual Overhead Conveyors</h3>
         <p class="position">The Rejection-Proof Physical Flow</p>
@@ -1685,7 +1702,7 @@ svg{
         <!-- <div class="footer"><span></span>Move. Protect. Deliver.</div> -->
       </article>
       <article class="solution-card digital">
-        <div class="card-top"><span class="number">01</span><span class="tag">DIGITAL INTELLIGENCE</span></div>
+        <div class="card-top"><span class="number">03</span><span class="tag">DIGITAL INTELLIGENCE</span></div>
         <h2>VOA Kaizn</h2>
         <h3>Mobile Shop-Floor App</h3>
         <p class="position">The Digital Capture Engine</p>
