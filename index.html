@@ -1534,13 +1534,26 @@ svg{
 .solution-card li{position:relative;padding-left:22px;color:#52677b;font-size:13px;line-height:1.65}
 .solution-card li:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 13%,transparent)}
 .solution-card li strong{display:block;margin-bottom:2px;color:#203c56;font-weight:800}
+/* Align logo with the beginning of the H3 text */
+.solution-card .h3-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Logo styling */
 .solution-card .voa-logo {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 70px;
+    position: static;
+    width: 45px;
     height: auto;
     object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Remove default H3 margin */
+.solution-card .h3-logo-wrapper h3 {
+    margin: 0;
 }
 /* .footer{display:flex;align-items:center;gap:9px;margin-top:auto;padding-top:24px;color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
 .footer span{width:7px;height:7px;border-radius:50%;background:var(--accent)} */
@@ -1672,15 +1685,19 @@ svg{
     </header>
     <div class="solutions-grid">
        <article class="solution-card ie">
-      
+
           <div class="card-top">
               <span class="number">01</span>
               <span class="tag">PRODUCTIVITY OPTIMISATION</span>
           </div>
       
-           <!-- VOA Logo -->
-          <img src="VOA_logo.png" alt="VOA Logo" class="voa-logo" /><h2>VOA (Visual Operation Analytics)</h2>
-          <h3>The Precision IE Tool</h3>
+          <h2>VOA (Visual Operation Analytics)</h2>
+      
+          <!-- Logo at the beginning of H3 text -->
+          <div class="h3-logo-wrapper">
+              <img src="VOA_logo.png" alt="VOA Logo" class="voa-logo" />
+              <h3>The Precision IE Tool</h3>
+          </div>
       
           <ul>
               <li>
@@ -1701,18 +1718,20 @@ svg{
               </li>
       
               <li>
-                    <strong>Training and Skill Improvement for IE-Industrial Engineers 
-                    & Operators:</strong> Turns recorded video studies into clear 
-                    visual standard guidelines.
+                  <strong>Training and Skill Improvement for IE-Industrial Engineers
+                  & Operators:</strong>
+                  Turns recorded video studies into clear visual standard guidelines.
               </li>
           </ul>
       
       </article>
       <article class="solution-card gripper">            
         <div class="card-top"><span class="number">02</span><span class="tag">ENGINEERED MATERIAL FLOW</span></div>
-        <!-- VOA Logo -->
-        <img src="UHS_logo.png"alt="UHS Logo" class="voa-logo" /> <h2>UHS Gripper Movers</h2>
-        <h3>Power Free Overhead Systems</h3>
+        <!-- Logo at the beginning of H3 text -->
+          <div class="h3-logo-wrapper">
+               <img src="UHS_logo.png"alt="UHS Logo" class="voa-logo" /> <h2>UHS Gripper Movers</h2>
+               <h3>Power Free Overhead Systems</h3>
+          </div>    
         <p class="position">The Rejection-Proof Physical Flow</p>
         <ul>
           <li><strong>Zero-Touch Transportation:</strong> Keeps delicate white and premium fabrics elevated off dusty floors to reduce handling stains.</li>
@@ -1723,8 +1742,11 @@ svg{
       </article>
       <article class="solution-card digital">
         <div class="card-top"><span class="number">03</span><span class="tag">DIGITAL INTELLIGENCE</span></div>
-        <img src="VOA_Kaizn_logo.png"alt="VOA Kaizn logo" class="voa-logo" /><h2>VOA Kaizn</h2>
-        <h3>Mobile Shop-Floor App</h3>
+        <!-- Logo at the beginning of H3 text -->
+          <div class="h3-logo-wrapper">
+              <img src="VOA_Kaizn_logo.png"alt="VOA Kaizn logo" class="voa-logo" /><h2>VOA Kaizn</h2>
+              <h3>Mobile Shop-Floor App</h3>
+          </div>        
         <p class="position">The Digital Capture Engine</p>
         <ul>
           <li><strong>Mobile Time Studies:</strong> Replaces manual stopwatches and clipboards with instant digital inputs right on the floor.</li>
