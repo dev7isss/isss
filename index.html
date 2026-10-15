@@ -535,19 +535,36 @@ h1,h2,h3,h4,h5{margin:0;font-weight:700;line-height:1.3}
 /* ============================================================
    TESTIMONIALS
    ============================================================ */
-.testi{background:var(--navy-deep);padding:40px 0 34px}
-.testi .sec-title{color:var(--teal)}
-.testi-track{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.testi-card{background:#fff;border-radius:4px;padding:16px;display:flex;flex-direction:column;min-height:210px}
-.stars{color:var(--orange);font-size:13px;letter-spacing:2px;margin-bottom:10px}
-.testi-card p{font-size:10px;line-height:1.85;color:#4a4f57;margin:0;flex:1;text-align:justify}
-.testi-who{display:flex;align-items:center;gap:10px;margin-top:14px}
-.avatar{width:34px;height:34px;border-radius:50%;flex:none;overflow:hidden}
-.testi-who h5{font-size:9.5px;color:var(--navy-deep);font-weight:700}
-.testi-who span{font-size:8.5px;color:#8a8f98}
-.dots{display:flex;justify-content:center;gap:7px;margin-top:22px}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:0;padding:0;cursor:pointer;transition:.25s}
-.dot.active{background:#fff;transform:scale(1.15)}
+.testimonials-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(20px,0vw,76px) clamp(0px,3vw,42px);background: linear-gradient(90deg, #06152f 0%, #c5dfff 0%, #ffffff 100%)}
+.testimonials-section:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.23;pointer-events:none;background-image:radial-gradient(rgba(25,196,210,.65) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(90deg,#000,transparent 28%,transparent 72%,#000)}
+.testimonials-section:after{content:"";position:absolute;z-index:-1;width:420px;height:420px;right:-210px;top:-220px;border:1px solid rgba(47,145,224,.18);border-radius:50%;box-shadow:0 0 0 38px rgba(47,145,224,.035),0 0 0 78px rgba(25,196,210,.025)}
+.testimonials-container{width:min(100%,1480px);margin:0 auto}
+.section-Texti{text-align:center;max-width:850px;margin:0 auto clamp(28px,3.5vw,42px)}
+.section-Texti h2{margin:13px 0 0;color:var(--orange);font-size: 32px;font-weight:900;line-height:1.1;letter-spacing:-.045em}
+.section-Texti h2 span{color:#0c2d49}
+.title-accent{width:82px;height:4px;margin:17px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--orange),#FFF)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch;transition:opacity .55s ease,transform .55s ease}
+.testimonial-grid.is-changing{opacity:0;transform:translateY(9px)}
+.testimonial-card{--accent:var(--orange);position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-width:0;min-height:355px;padding:23px 20px 20px;border:1px solid rgba(25,196,210,.8);border-radius:15px;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.18);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.testimonial-card:before{content:"";position:absolute;z-index:-1;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--cyan))}
+.testimonial-card:after{content:"“";position:absolute;z-index:-1;right:12px;top:18px;color:var(--accent);opacity:.08;font-family:Georgia,serif;font-size:94px;line-height:1}
+.testimonial-card:hover{transform:translateY(-4px);border-color:#8beaf0;box-shadow:0 17px 34px rgba(0,0,0,.24)}
+.testimonial-card:nth-child(4n+2){--accent:var(--blue)}.testimonial-card:nth-child(4n+3){--accent:#17866b}.testimonial-card:nth-child(4n){--accent:#7556b8}
+.rating-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.stars{color:#ffb92e;font-size:15px;letter-spacing:2px;white-space:nowrap}
+.rating-label{color:var(--accent);font-size:8px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.testimonial-text{margin:0;color:#40596d;font-size:16px;line-height:1.8;flex:1}
+.testimonial-divider{height:1px;margin:19px 0 15px;background:linear-gradient(90deg,#dce8ee,transparent)}
+.testimonial-who{display:flex;align-items:center;gap:10px;min-width:0}
+.client-mark{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--navy));color:#fff;font-size:12px;font-weight:900;letter-spacing:.03em}
+.client-details{min-width:0}.client-details h3{margin:0 0 4px;color:var(--navy);font-size:10.5px;line-height:1.45;font-weight:800;text-transform:uppercase;overflow-wrap:anywhere}.client-details p{margin:0;color:#7a8b98;font-size:11px}
+.quote-mark{margin-left:auto;color:#c7dbe6;font-family:Georgia,serif;font-size:32px;line-height:1}
+.testimonial-dots{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:28px}
+.testimonial-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background: linear-gradient(90deg, #06152f 0%, #ffb92e 0%, #ffffff 100%);cursor:pointer;transition:width .35s ease,background .35s ease,transform .35s ease}
+.testimonial-dots button.active{width:24px;border-radius:8px;background:var(--orange);transform:scale(1.04)}
+@media(max-width:1100px){.testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.testimonial-card{min-height:300px}.testimonial-text{font-size:16px}}
+@media(max-width:620px){.testimonials-section{padding:40px 15px}.section-Texti{margin-bottom:26px}.testimonial-grid{grid-template-columns:1fr;gap:15px}.testimonial-card{min-height:0;padding:22px 20px}.testimonial-text{font-size:16px}.testimonial-divider{margin:17px 0 14px}}
+@media(prefers-reduced-motion:reduce){.testimonial-grid,.testimonial-dots button,.testimonial-card{transition:none!important}}
 
 /* ============================================================
    CLIENTS
@@ -2084,48 +2101,15 @@ svg{
 </section>
 
 <!-- ================= TESTIMONIALS ================= -->
-<section class="testi" id="testimonials">
-  <div class="container">
-    <h2 class="sec-title">Customer say some words</h2>
-    <div class="testi-track" id="testiTrack">
-      <article class="testi-card">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p>ISSS is a very good IT tool - Trainkey, SMV monitor, Standard Operation Creation, we can now major improvement in the efficiency loss useful reports under SMV Database along with Standard values, OB, Skill Matrix, Shuttle &amp; Seams work to create the common database &amp; flow the method communication across the factories / organisation.</p>
-        <div class="testi-who">
-          <span class="avatar"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#dfe4ea"/><circle cx="20" cy="15" r="7" fill="#9aa3ad"/><path d="M6 38c0-8 6-13 14-13s14 5 14 13z" fill="#9aa3ad"/></svg></span>
-          <span><h5>ANBARTHIN CLOTHING PVT LTD</h5><span>The Director</span></span>
-        </div>
-      </article>
-
-      <article class="testi-card">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p>ISSS is a very good IT tool - Trainkey, SMV monitor, Standard Operation Creation, we can now major improvement in the efficiency loss useful reports under SMV Database along with Standard values, OB, Skill Matrix, Shuttle &amp; Seams work to create the common database.</p>
-        <div class="testi-who">
-          <span class="avatar"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#dfe4ea"/><circle cx="20" cy="15" r="7" fill="#9aa3ad"/><path d="M6 38c0-8 6-13 14-13s14 5 14 13z" fill="#9aa3ad"/></svg></span>
-          <span><h5>Auswells</h5><span>The Director</span></span>
-        </div>
-      </article>
-
-      <article class="testi-card">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p>This is to certify that SMV Unit Manage Solutions system has been installed by M/s Sriram Industries Chennai in our Nanaimo/TEAM units. We have benefitted in increased production as well over injections by using the SMV.</p>
-        <div class="testi-who">
-          <span class="avatar"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#dfe4ea"/><circle cx="20" cy="15" r="7" fill="#9aa3ad"/><path d="M6 38c0-8 6-13 14-13s14 5 14 13z" fill="#9aa3ad"/></svg></span>
-          <span><h5>SHABROW CLOTHING PVT LTD</h5><span>The Founder</span></span>
-        </div>
-      </article>
-
-      <article class="testi-card">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p>This is to certify that SMV Unit Manage Solutions system has been installed by M/s Sriram Industries Chennai in our Nanaimo/TEAM units. We have benefitted in increased production as well over injections by using the SMV.</p>
-        <div class="testi-who">
-          <span class="avatar"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#dfe4ea"/><circle cx="20" cy="15" r="7" fill="#9aa3ad"/><path d="M6 38c0-8 6-13 14-13s14 5 14 13z" fill="#9aa3ad"/></svg></span>
-          <span><h5>SHABROW CLOTHING PVT LTD</h5><span>The Founder</span></span>
-        </div>
-      </article>
-    </div>
-    <div class="dots" id="testiDots"></div>
+<section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+ <div class="testimonials-container">
+  <div class="section-Texti">
+   <h2 id="testimonials-title">Stories of our <span>Growth and Success</span></h2>
+   <div class="title-accent" aria-hidden="true"></div>
   </div>
+  <div class="testimonial-grid" id="testimonialGrid" aria-live="polite"></div>
+  <div class="testimonial-dots" id="testimonialDots" aria-label="Choose testimonial group"></div>
+ </div>
 </section>
       
 <!-- ================= FOOTER ================= -->
@@ -2228,57 +2212,96 @@ svg{
   });
 
   /* ---------- Testimonial slider ---------- */
-  var testimonials = [
-    {stars:5, text:"ISSS is a very good IT tool - Trainkey, SMV monitor, Standard Operation Creation, we can now major improvement in the efficiency loss useful reports under SMV Database along with Standard values, OB, Skill Matrix, Shuttle &amp; Seams work to create the common database &amp; flow the method communication across the factories / organisation.", name:"ANBARTHIN CLOTHING PVT LTD", role:"The Director"},
-    {stars:5, text:"ISSS is a very good IT tool - Trainkey, SMV monitor, Standard Operation Creation, we can now major improvement in the efficiency loss useful reports under SMV Database along with Standard values, OB, Skill Matrix, Shuttle &amp; Seams work to create the common database.", name:"Auswells", role:"The Director"},
-    {stars:5, text:"This is to certify that SMV Unit Manage Solutions system has been installed by M/s Sriram Industries Chennai in our Nanaimo/TEAM units. We have benefitted in increased production as well over injections by using the SMV.", name:"SHABROW CLOTHING PVT LTD", role:"The Founder"},
-    {stars:5, text:"The needle time monitoring solution gave us live visibility of every line. Within two months our sewing floor efficiency improved measurably and the supervisors now act on data instead of guesswork.", name:"VERTEX APPARELS", role:"General Manager"},
-    {stars:5, text:"Digitising our WIP tracking removed the daily firefighting. Reports that used to take half a day in Excel are now ready before the morning meeting.", name:"NORTHFIELD GARMENTS", role:"Operations Head"},
-    {stars:5, text:"Their skill matrix and absenteeism module helped us plan line loading in advance. Training needs are now visible to the whole management team.", name:"PRIME STITCH EXPORTS", role:"HR Manager"}
-  ];
+  const testimonials = [
+ {text:"We have worked with ISSS and Ravee over the last year on products related to garment manufacturing and process control. We have seen good results with the UHS system. His approach and knowledge of garment manufacturing is good.",name:"Ambattur Clothing Pvt Ltd",role:"Our Customer",initials:"AC"},
+ {text:"VAS is a very good IE tool for training, SMV creation, and standard operation creation. It helps improve efficiency and supports a shared database of standard values, OB charts, and skill matrices across factories.",name:"Aquarelle",role:"Our Customer",initials:"AQ"},
+ {text:"This is to certify that UHS (Unit Hanger Solution) system has been installed by M/s Sriram Industries-Chennai in our Kunrathar/TKM1 units. We have benefitted in increased production as well lower rejections by using the UHS.",name:"Magnum Clothing Pvt Ltd",role:"Our Customer",initials:"MC"},
+];
 
-  var avatarSVG = '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#dfe4ea"/><circle cx="20" cy="15" r="7" fill="#9aa3ad"/><path d="M6 38c0-8 6-13 14-13s14 5 14 13z" fill="#9aa3ad"/></svg>';
-  var track = document.getElementById('testiTrack');
-  var testiDots = document.getElementById('testiDots');
+const grid = document.getElementById("testimonialGrid");
+const dots = document.getElementById("testimonialDots");
+const DOT_COUNT = 3;
+let page = 0;
+let timer;
+let renderToken = 0;
 
-  function perView(){ return window.innerWidth <= 991 ? 1 : 3; }
+function cardsPerPage() {
+  return window.innerWidth <= 620 ? 1 : window.innerWidth <= 1100 ? 1 : 3;
+}
+function render(animate = false) {
+  const count = cardsPerPage();
+  const maxStart = Math.max(0, testimonials.length - count);
+  // Four fixed navigation dots; each dot selects a different overlapping group.
+  const start = Math.round((page / (DOT_COUNT - 1)) * maxStart);
+  if (animate) grid.classList.add("is-changing");
 
-  function renderTesti(page){
-    var pv = perView();
-    var slice = testimonials.slice(page*pv, page*pv+pv);
-    track.innerHTML = slice.map(function(t){
-      return '<article class="testi-card">'+
-        '<div class="stars" aria-label="5 out of 5 stars">★★★★★</div>'+
-        '<p>'+t.text+'</p>'+
-        '<div class="testi-who"><span class="avatar">'+avatarSVG+'</span>'+
-        '<span><h5>'+t.name+'</h5><span>'+t.role+'</span></span></div></article>';
-    }).join('');
+  const token = ++renderToken;
+  const paint = () => {
+    if (token !== renderToken) return;
+    grid.innerHTML = testimonials.slice(start, start + count).map(t => `
+      <article class="testimonial-card">
+        <div class="rating-row">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <span class="rating-label">Client feedback</span>
+        </div>
+        <p class="testimonial-text">${t.text}</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-who">
+          <div class="client-mark" aria-hidden="true">${t.initials}</div>
+          <div class="client-details"><h3>${t.name}</h3><p>${t.role}</p></div>
+          <span class="quote-mark" aria-hidden="true">”</span>
+        </div>
+      </article>`).join("");
+    dots.querySelectorAll("button").forEach((button, i) => {
+      button.classList.toggle("active", i === page);
+      button.setAttribute("aria-pressed", i === page ? "true" : "false");
+    });
+    requestAnimationFrame(() => grid.classList.remove("is-changing"));
+  };
+
+  if (animate) {
+    window.setTimeout(paint, 260);
+  } else {
+    paint();
   }
+}
 
-  function buildTestiDots(){
-    var pages = Math.ceil(testimonials.length / perView());
-    if (testiPage >= pages) testiPage = 0;
-    testiDots.innerHTML = '';
-    for (var i=0;i<pages;i++){
-      var b = document.createElement('button');
-      b.className = 'dot' + (i===testiPage ? ' active' : '');
-      b.setAttribute('aria-label','Testimonial page '+(i+1));
-      (function(idx){ b.addEventListener('click', function(){ testiPage = idx; update(); }); })(i);
-      testiDots.appendChild(b);
-    }
+function buildDots() {
+  dots.innerHTML = "";
+  for (let i = 0; i < DOT_COUNT; i++) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.setAttribute("aria-label", `Show testimonial group ${i + 1}`);
+    button.addEventListener("click", () => {
+      page = i;
+      render(true);
+      restartTimer();
+    });
+    dots.appendChild(button);
   }
+}
 
-  var testiPage = 0;
-  function update(){ renderTesti(testiPage); buildTestiDots(); }
-  update();
+function restartTimer() {
+  clearInterval(timer);
+  // Slow, relaxed rotation: update every 10 seconds with a soft fade/slide transition.
+  timer = setInterval(() => {
+    page = (page + 1) % DOT_COUNT;
+    render(true);
+  }, 10000);
+}
 
-  var testiTimer = setInterval(function(){
-    var pages = Math.ceil(testimonials.length / perView());
-    testiPage = (testiPage + 1) % pages;
-    update();
-  }, 6000);
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    render(false);
+    restartTimer();
+  }, 180);
+});
 
-  /* ---------- Client logo slider ---------- */
+buildDots();
+render(false);
+restartTimer();
   
 
   /* ---------- Keep layout correct on resize ---------- */
@@ -2409,8 +2432,7 @@ if ("IntersectionObserver" in window) {
 </script>
       
 <script>
-      // The carousel scrolls continuously using CSS.
-// Pause while hovered or keyboard-focused for easier viewing.
+ /* ---------- Client logo slider ---------- */
 document.querySelectorAll(".logo-marquee").forEach((marquee) => {
   const track = marquee.querySelector(".logo-track");
   if (!track) return;
