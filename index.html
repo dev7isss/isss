@@ -228,45 +228,263 @@ h1,h2,h3,h4,h5{margin:0;font-weight:700;line-height:1.3}
 
       
 * { box-sizing: border-box; }
-
- /* ============================================================
+/* ============================================================
    CHALLENGES SECTION
    ============================================================ */
-.challenges-section{position:relative;isolation:isolate;overflow:hidden;padding:42px clamp(18px,2.5vw,42px) 52px;background:radial-gradient(ellipse at 48% 38%,#fff 0%,rgba(255,255,255,.97) 55%,#f7faff 100%)}
-.challenges-container{width:min(100%,1500px);margin:0 auto}
-.section-challeng{max-width:1300px}
-.section-challeng h1{margin:0;color:#D45829;font-size: 32px;font-weight:900;line-height:1.12;letter-spacing:-.035em}
-.section-challeng h1 span{font-size:32px;font-weight:900;color:#071943;}
-.section-challeng p{margin:14px 0 0;color:#3e4d6c;font-size:clamp(13px,1.3vw,18px);line-height:1.5}
-.section-challeng>b{display:block;color:#101e47;font-size:clamp(13px,1.25vw,17px);font-weight:700}
-.challenge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.challenge-card{--accent:var(--orange);--pale:#fff9f0;--rgb:255,249,240;position:relative;isolation:isolate;overflow:hidden;min-width:0;min-height:400px;border:1px solid color-mix(in srgb,var(--accent) 18%,white);border-radius:28px;background:var(--pale);box-shadow:0 12px 28px rgba(25,43,75,.06);padding:22px 24px 18px;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
-.challenge-card:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(25,43,75,.12)}
-.orange{--accent:#bd6d08;--pale:#fff9f0;--rgb:255,249,240}.blue{--accent:#2268d2;--pale:#f3f8ff;--rgb:243,248,255}.pink{--accent:#c83f68;--pale:#fff4f6;--rgb:255,244,246}.green{--accent:#17784f;--pale:#f2fbf5;--rgb:242,251,245}.amber{--accent:#bf700b;--pale:#fff8ed;--rgb:255,248,237}.purple{--accent:#6535a9;--pale:#f8f3ff;--rgb:248,243,255}
-.photo{position:absolute;z-index:-2;right:0;top:0;width:60%;height:40%;background-size:cover;background-position:center;clip-path:ellipse(88% 80% at 100% 0%);opacity:.88}
-.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--rgb),.04),rgba(var(--rgb),.08) 55%,rgba(var(--rgb),.55))}
-.photo-fabric{background-image:url("https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=85")}
-.photo-sewing{background-image:url("https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=85")}
-.photo-line{background-image:url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85")}
-.photo-compliance{background-image:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85")}
-.photo-quality{background-image:url("https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=85")}
-.photo-rework{background-image:url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85")}
-.numbers{position:relative;z-index:1;color:color-mix(in srgb,var(--accent) 62%,white);font-size:clamp(34px,3.2vw,48px);font-weight:700;line-height:1;margin:0 0 18px;letter-spacing:-.04em}
-.numbers:after{content:"";display:block;width:44px;height:2px;background:var(--accent);opacity:.7;margin:9px 0 0}
-.content{position:relative;z-index:1;max-width:83%;margin-bottom:20px}
-.content h2{margin:0;color:#071943;font-family:"Playfair Display",Georgia,serif;font-size:clamp(20px,2vw,29px);font-weight:700;line-height:1.12;letter-spacing:-.02em}
-.content h2.italic{font-style:italic;font-weight:600}.content h2.green-title{color:#176849}
-.script{margin:0 0 8px;color:var(--accent);font-family:"Playfair Display",Georgia,serif;font-size:clamp(23px,2.5vw,36px);font-style:italic;line-height:1.12;letter-spacing:-.035em}
-.content p{margin:10px 0 0;color:#3f4e6d;font-size:clamp(12px,1.15vw,16px);line-height:1.5}
-.fix{position:relative;z-index:2;display:flex;align-items:center;gap:14px;margin-top:auto;padding:15px 14px 15px 13px;min-height:116px;border:1px solid rgba(255,255,255,.9);border-radius:35px;background:rgba(255,255,255,.79);box-shadow:0 4px 16px rgba(40,60,90,.035);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.icon{width:72px;height:72px;flex:0 0 72px;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--accent) 12%,white);color:var(--accent)}
-.icon svg{width:43px;height:43px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.fix-text{min-width:0;flex:1}.fix-text h3{margin:0 0 3px;color:var(--accent);font-size:clamp(17px,1.6vw,23px);line-height:1.1;font-weight:800}.fix-text p{margin:0;color:#3d4b69;font-size:clamp(11px,1.05vw,14px);line-height:1.4}
-@media(max-width:640px){.challenges-section{padding:34px 14px 40px}letter-spacing:.3em;margin-bottom:15px}.section-challeng{margin-bottom:24px}.section-challeng h1{font-size:clamp(29px,8vw,40px);line-height:1.13}.section-challeng p{font-size:13px}.challenge-grid{grid-template-columns:1fr;gap:16px}.challenge-card{min-height:365px;padding:21px 19px 17px;border-radius:23px}.photo{width:62%;height:57%}.content{max-width:84%}.content h2{font-size:26px}.script{font-size:30px}.content p{font-size:14px}.fix{gap:11px;padding:12px;min-height:105px;border-radius:28px}.icon{width:56px;height:56px;flex-basis:56px}.icon svg{width:34px;height:34px}.arrow{width:40px;height:40px;flex-basis:40px;font-size:27px}.fix-text h3{font-size:18px}.fix-text p{font-size:12px}}     
+.bottlenecks-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(30px, 4.5vw, 68px) clamp(16px, 4vw, 62px);
+  background:
+    linear-gradient(120deg, rgba(248,253,255,.96), rgba(220,245,251,.92)),
+    #e7f7fb;
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--navy);
+  background: #ffff;
+;
+}
+
+.bottlenecks-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 1;
+  background-image: radial-gradient(#3b94b9 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: linear-gradient(90deg, #000, transparent 24%, transparent 78%, #000);
+}
+
+.section-container {
+  width: min(100%, 1480px);
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header { max-width: 1250px; margin-bottom: 28px; }
+
+.eyebrow {
+  margin: 0 0 11px;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .17em;
+}
+
+.section-header h1 {
+  margin: 0;
+  color: #0c2d49;
+  font-size: clamp(25px, 2.8vw, 43px);
+  line-height: 1.13;
+  letter-spacing: -.045em;
+  font-weight: 800;
+}
+
+.section-header h1 span, .section-header h1 em {
+  color: #D45829;
+  font-style: normal;
+}
+
+.section-description {
+  max-width: 1120px;
+  margin: 14px 0 0;
+  color: #4b657a;
+  font-size: clamp(14px, 1.12vw, 18px);
+  line-height: 1.6;
+}
+.section-description strong { color: #274760; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.bottleneck-card {
+  --card-image: none;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 390px;
+  padding: clamp(20px, 2vw, 29px);
+  border: 1px solid rgba(123, 183, 202, .55);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(23, 65, 89, .10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.bottleneck-card::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background-image: var(--card-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  transform: scale(1.01);
+  transition: opacity .35s ease, transform .5s ease;
+}
+
+.bottleneck-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(100deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.25) 45%,
+    rgba(244, 251, 253, 0.35) 100%);
+}
+
+.bottleneck-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(23, 65, 89, .16);
+}
+.bottleneck-card:hover::before { opacity: .55; transform: scale(1.055); }
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 14px 14px 14px 4px;
+  background: var(--navy-deep);
+  color: #fff;
+  border-bottom: 4px solid #D45829;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 rgba(245,130,32,.25);
+}
+
+.card-label {
+  margin: 3px 0 0;
+  padding: 7px 10px;
+  border-radius: 30px;
+  color: #174e70;
+  background: rgba(223,244,249,.88);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.card-title {
+  margin-top: -25px;    
+  max-width: 95%;
+  /* margin: 0 18px; */
+  color: #0d2e4b;
+  font-size: clamp(18px, 1.55vw, 23px);
+  line-height: 1.2;
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: -.025em;
+}
+.card-title .highlight { color: #D45829; }
+
+.card-summary {
+  margin: -8px 0 17px;
+  color: #405d72;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.info-panel {
+  padding: 13px 14px 14px;
+  margin-top: 11px;
+  border-radius: 13px;
+  backdrop-filter: blur(7px);
+}
+
+.info-panel fix{
+      margin-bottom: -25px;
+}
+
+/* .info-panel.challenge {
+  background: rgba(255, 242, 229, .93);
+  border-left: 4px solid var(--orange);
+}
+.info-panel.fix {
+  background: rgba(230, 246, 250, .94);
+  border-left: 4px solid var(--navy);
+} */
+
+.info-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 7px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.challenge .info-heading { color: #D45829; }
+.fix .info-heading { color: var(--navy); }
+
+.info-icon {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(14, 49, 73, .12);
+}
+.challenge .info-icon { background: #D45829; }
+.fix .info-icon { background: var(--navy); }
+.info-icon svg { width: 16px; height: 16px; }
+
+.info-panel p {
+  margin: 0 0 0 38px;
+  color: #141414;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (min-width: 1400px) {
+  .bottleneck-card { min-height: 405px; }
+}
+
+@media (max-width: 1050px) {
+  .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .bottleneck-card { min-height: 370px; }
+  .card-title { font-size: 21px; }
+}
+
+@media (max-width: 650px) {
+  .bottlenecks-section { padding: 28px 14px 38px; }
+  .section-header { margin-bottom: 22px; }
+  .section-header h1 { font-size: clamp(24px, 7vw, 34px); }
+  .section-description { font-size: 14px; line-height: 1.55; }
+  .cards-grid { grid-template-columns: 1fr; gap: 15px; }
+  .bottleneck-card { min-height: 0; padding: 20px 17px; border-radius: 17px; }
+  .card-title { max-width: 88%; font-size: 21px; }
+  .card-label { font-size: 9px; }
+  .info-panel p { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}
 
 /* ============================================================
-TESTIMONIALS
-============================================================ */
+   TESTIMONIALS
+   ============================================================ */
 .testimonials-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(20px,0vw,76px) clamp(0px,3vw,42px);background: linear-gradient(90deg, #06152f 0%, #c5dfff 0%, #ffffff 100%)}
 .testimonials-section:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.23;pointer-events:none;background-image:radial-gradient(rgba(25,196,210,.65) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(90deg,#000,transparent 28%,transparent 72%,#000)}
 .testimonials-section:after{content:"";position:absolute;z-index:-1;width:420px;height:420px;right:-210px;top:-220px;border:1px solid rgba(47,145,224,.18);border-radius:50%;box-shadow:0 0 0 38px rgba(47,145,224,.035),0 0 0 78px rgba(25,196,210,.025)}
@@ -326,7 +544,7 @@ TESTIMONIALS
   margin: 0 auto;
 }
 
-.clients-container h1 {
+h1 {
   margin: 11px 0 0;
   text-align: center;
   color: #D45829;
@@ -336,7 +554,7 @@ TESTIMONIALS
   letter-spacing: -.045em;
 }
 
-.clients-container h1 span { color: var(--navy); }
+h1 span { color: var(--navy); }
 
 .title-line {
   width: 76px;
@@ -778,7 +996,87 @@ svg{
     padding:11px 18px;
   }
 
-  
+  /* Challenges */
+  .challenges-section{
+    padding-block:44px;
+  }
+
+  .challenges-container{
+    max-width:920px;
+  }
+
+  .challenges-header{
+    margin-bottom:34px;
+  }
+
+  .challenges-header h2{
+    font-size:clamp(28px, 4vw, 34px);
+    letter-spacing:-.5px;
+  }
+
+  .challenges-header p{
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .challenge-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:20px;
+    margin-bottom:20px;
+  }
+
+  .challenge-card{
+    min-width:0;
+    padding:24px 20px 22px;
+  }
+
+  .challenge-card-image{
+    width:100%;
+    height:auto;
+    aspect-ratio:16 / 9;
+    margin:34px 0 18px;
+    overflow:hidden;
+    border-radius:14px;
+  }
+
+  .challenge-card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    margin:0;
+  }
+
+  .challenge-card h3{
+    font-size:17px;
+    line-height:1.25;
+    margin-bottom:18px;
+  }
+
+  .issue-box,
+  .fix-box{
+    padding:15px;
+    gap:12px;
+  }
+
+  .issue-icon,
+  .fix-icon{
+    flex:0 0 42px;
+    width:42px;
+    height:42px;
+    font-size:17px;
+  }
+
+  .issue-content h4,
+  .fix-content h4{
+    font-size:15px;
+  }
+
+  .issue-content p,
+  .fix-content p{
+    font-size:13px;
+  }
+
   /* Reusable sections, including currently commented sections */
   .value{
     padding-block:42px 32px;
@@ -887,7 +1185,94 @@ svg{
     text-align:center;
   }
 
-  
+  .challenges-section{
+    padding-block:38px;
+  }
+
+  .challenges-container{
+    padding-inline:16px;
+  }
+
+  .section-label{
+    gap:10px;
+    font-size:11px;
+    letter-spacing:2.5px;
+  }
+
+  .label-line{
+    width:36px;
+    height:3px;
+  }
+
+  .challenges-header{
+    margin-bottom:28px;
+  }
+
+  .challenges-header h2{
+    font-size:clamp(24px, 7vw, 31px);
+    line-height:1.13;
+  }
+
+  .challenges-header p{
+    font-size:14px;
+    line-height:1.65;
+    text-align:left;
+  }
+
+  .challenge-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .challenge-card{
+    padding:20px 18px 20px;
+    border-radius:16px;
+  }
+
+  .challenge-card-image{
+    aspect-ratio:16 / 9;
+    margin-top:18px;
+    margin-bottom:16px;
+    border-radius:12px;
+  }
+
+  .challenge-card h3{
+    font-size:17px;
+    margin-bottom:16px;
+    text-align:left;
+  }
+
+  .issue-box,
+  .fix-box{
+    padding:14px;
+    gap:11px;
+    align-items:flex-start;
+  }
+
+  .issue-icon,
+  .fix-icon{
+    flex-basis:40px;
+    width:40px;
+    height:40px;
+    font-size:16px;
+  }
+
+  .issue-content,
+  .fix-content{
+    min-width:0;
+  }
+
+  .issue-content h4,
+  .fix-content h4{
+    font-size:14px;
+  }
+
+  .issue-content p,
+  .fix-content p{
+    font-size:12.5px;
+    line-height:1.55;
+  }
+
   /* Reusable sections */
   .value{
     padding:36px 0 28px;
@@ -1046,6 +1431,55 @@ svg{
     display:block;
     width:100%;
     font-size:9.5px;
+  }
+
+  .challenge-card{
+    padding:16px 14px 18px;
+  }
+
+  .challenge-card-image{
+    margin-top:14px;
+  }
+
+  .challenge-card h3{
+    font-size:16px;
+  }
+
+  .issue-box,
+  .fix-box{
+    padding:12px;
+  }
+
+  .issue-icon,
+  .fix-icon{
+    flex-basis:36px;
+    width:36px;
+    height:36px;
+    font-size:14px;
+  }
+
+  .issue-content h4,
+  .fix-content h4{
+    font-size:13px;
+  }
+
+  .issue-content p,
+  .fix-content p{
+    font-size:11.5px;
+  }
+
+  .sol-card__row{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .sol-card__body p{
+    text-align:center;
+  }
+
+  .sol-btn{
+    align-self:center;
   }
 }
 
@@ -1272,54 +1706,19 @@ svg{
 </section>
 
 <!-- ================= CHALLENGES ================= -->
-<section class="challenges-section">
-  <div class="challenges-container">
-    <div class="section-challeng">
-      <h1>Quality Maximisation <span>and</span> Cost Reduction <span>Challenges:</span></h1>
-      <p>Driven by Theory of Constraints (TOC), powered by Digitisation, and streamlined by Engineered Material Movement.</p>
-      <b>We offer solutions to the following.</b>
-    </div>
-
-    <div class="challenge-grid">
-      <article class="challenge-card orange">
-        <div class="photo photo-fabric"></div><div class="numbers">01</div>
-        <div class="content"><h2>Human Touch of<br>Cut Panels</h2><div class="script">Leading to Stains</div><p>on White/Delicate High Fashion Garments Apart from Crumpling and Fabric Integrity.</p></div>
-        <div class="fix"><div class="icon"><svg viewBox="0 0 64 64"><path d="M7 35l14 12c3 2 7 2 10-1l25-20c3-3-1-8-5-5L33 35l-8-2-7-7-11 9z"/><path d="M24 31l7-7c3-3 8-3 11 0l3 3"/></svg></div><div class="fix-text"><h3>Fix</h3><p>Touchless material movement systems that eliminate physical handling damage.</p>
-      </article>
-
-      <article class="challenge-card blue">
-        <div class="photo photo-sewing"></div><div class="numbers">02</div>
-        <div class="content"><h2>High Handling<br>and Low Machine</h2><div class="script">Running Time</div><p>- Low Efficiency</p></div>
-        <div class="fix"><div class="icon"><svg viewBox="0 0 64 64"><path d="M26 6h12l2 8a20 20 0 0 1 6 3l7-3 6 10-6 5a20 20 0 0 1 0 7l6 5-6 10-7-3a20 20 0 0 1-6 3l-2 7H26l-2-7a20 20 0 0 1-6-3l-7 3-6-10 6-5a20 20 0 0 1 0-7l-6-5 6-10 7 3a20 20 0 0 1 6-3z"/><circle cx="32" cy="32" r="8"/></svg></div><div class="fix-text"><h3>Fix</h3><p>Reduce bundle time and load cut pieces to overhead gripper mover, increasing machine running time.</p>
-      </article>
-
-      <article class="challenge-card pink">
-        <div class="photo photo-line"></div><div class="numbers">03</div>
-        <div class="content"><h2>Poor Line<br>Balancing</h2><p>as Some Wait for Work and Some or Overloaded Untapped Hidden Capacity.</p></div>
-        <div class="fix"><div class="icon"><svg viewBox="0 0 64 64"><path d="M9 53V35h10v18M27 53V23h10v30M45 53V10h10v43M6 57h52"/></svg></div><div class="fix-text"><h3>Fix</h3><p>Improved line balancing with focus on bottlenecks and TOC.</p>
-      </article>
-
-      <article class="challenge-card green">
-        <div class="photo photo-compliance"></div><div class="numbers">04</div>
-        <div class="content"><h2 class="italic">Buyer Compliance</h2><h2 class="green-title">Difficulty Securing<br>Approvals</h2><p>for White/Delicate and High Fashion Garments and Inability to Match Buyer Price.</p></div>
-        <div class="fix"><div class="icon"><svg viewBox="0 0 64 64"><path d="M17 7h23l10 10v39H17zM40 7v12h10M24 29h18M24 37h12M29 47l6 6 13-14"/></svg></div><div class="fix-text"><h3>Fix</h3><p>Reduce human handling of cut garments and improve value-added elements.</p>
-      </article>
-
-      <article class="challenge-card amber">
-        <div class="photo photo-quality"></div><div class="numbers">05</div>
-        <div class="content"><h2>Operation Quality</h2><div class="script">Standardisation</div><p>Different Locations and Different Lines Produce Varied Quality of Garments.</p></div>
-        <div class="fix"><div class="icon"><svg viewBox="0 0 64 64"><circle cx="32" cy="23" r="15"/><path d="M24 36l-4 21 12-7 12 7-4-21M32 13l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div><div class="fix-text"><h3>Fix</h3><p>Operation digitisation with SOPs paired with training and skill improvement with digital videos.</p>
-      </article>
-
-      <article class="challenge-card purple">
-        <div class="photo photo-rework"></div><div class="numbers">06</div>
-        <div class="content"><h2>High Rework</h2><div class="script">and Missing Pieces</div><p>with Fudged Production Reports. Factories Report as Much as 10% Loss from Cut to Pack, Apart from Availability of Verified Data on Hourly Production.</p></div>
-        <div class="fix"><div class="icon"><svg viewBox="0 0 64 64"><path d="M8 53h48M12 48V36h10v12M28 48V25h10v23M44 48V13h10v35M10 17h14l7 7 9-12h14"/></svg></div><div class="fix-text"><h3>Fix</h3><p>Conveyor systems that ensure pieces are always accounted for, with data integrity.</p>
-      </article>
-    </div>
-  </div>
-</section>
+<section class="bottlenecks-section">
+    <div class="section-container">
+      <header class="section-header">
+        <!-- <p class="eyebrow">LEAN MANUFACTURING · DIGITISATION · TOC</p> -->
+        <h1><span>Quality Maximisation</span> and <span>Cost Reduction</span> Challenges:</h1>
             
+        <p class="section-description"> Driven by <span>Theory of Constraints (TOC), powered by Digitisation, and streamlined by
+          Engineered Material Movement.</span> <strong>We offer solutions to the following.</strong></p>
+
+      <div class="cards-grid" id="cards" aria-label="Bottlenecks and solutions"></div>
+    </div>
+  </section>
+
 <!-- ================= Solutions ================= -->
 <section class="solutions-section">
   <div class="solutions-container">
@@ -1405,6 +1804,180 @@ svg{
     </div>
   </div>
 </section>
+<!-- <section class="value">
+  <div class="value-bg" aria-hidden="true">
+    <svg viewBox="0 0 1400 520" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#151a4d"/><stop offset=".55" stop-color="#22206a"/><stop offset="1" stop-color="#0b1038"/>
+        </linearGradient>
+        <radialGradient id="vg2" cx="72%" cy="45%" r="42%">
+          <stop offset="0" stop-color="#3fd0e6" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#3fd0e6" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1400" height="520" fill="url(#vg)"/>
+      <rect width="1400" height="520" fill="url(#vg2)"/>
+      <g stroke="#6fe0f0" stroke-width=".7" opacity=".28" fill="none">
+        <path d="M980 60c80 40 120 120 120 200s-40 160-120 200"/>
+        <path d="M1040 30c90 50 140 140 140 230s-50 180-140 230"/>
+        <path d="M900 100c60 30 92 92 92 160s-32 130-92 160"/>
+      </g>
+      <g fill="#6fe0f0" opacity=".5">
+        <circle cx="1010" cy="150" r="2.5"/><circle cx="1075" cy="210" r="2"/><circle cx="1120" cy="300" r="2.5"/>
+        <circle cx="1040" cy="380" r="2"/><circle cx="960" cy="260" r="2"/><circle cx="1180" cy="170" r="2"/>
+      </g>
+      <g opacity=".55">
+        <path d="M1120 130c70 0 120 60 120 140 0 120-70 220-150 250-30-70-20-140 10-200-40-30-60-80-40-130 12-34 34-60 60-60z" fill="#2ec7dd" opacity=".35"/>
+      </g>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="value-inner">
+      <div class="value-head"><h2>WE WORK TO ADD VALUE TO YOUR OPERATIONS</h2></div>
+      <p>Our aim is to add value to customers operations through manufacturing process changes using latest concepts on digitisation, IT, process automation, TMC and quality engineering etc., based out of chennai, india, we are a team of professional experts and consultants with expertise in areas of operational research, TQM, software development and industrial engineering. We offer cutting edge solutions that helps profitability, competitiveness and long term sustenance of the company and a robust career for the employees, with over 30 years of practical experience, we have developed solutions, which are proven and have several customer best models and references to prove that production improvement and profitability can be enhanced systematically and with ease, comfort and in sync with the ultimate goal of organisations and professionals.</p>
+      <p class="value-foot">EMPOWERING FACTORIES WITH PROCESS AUTOMATION SOLUTIONS</p>
+    </div>
+  </div>
+</section> -->
+
+<!-- ================= SOLUTIONS AT A GLANCE ================= -->
+<!-- <section class="glance" id="gallery">
+  <div class="container">
+    <h2 class="sec-title">Solutions at a Glance</h2>
+    <ul class="glance-grid">
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Reducing SMV/SAM Cycle Time</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Skill Improvement and Absenteeism Management</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Bottleneck and Root Cause Analysis</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Increasing Needle Time</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Reducing Inventory and Spares Cost</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Effective Asset Utilization</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Data Digitization Solutions</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Automated MIS (Management Information System) Reports</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Quality Engineering Solutions</li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>WIP (Work-In-Progress) Monitoring</li>
+    </ul>
+  </div>
+</section> -->
+
+<!-- ================= SOLUTION CARDS ================= -->
+<!-- <section class="solutions" id="solutions">
+  <div class="container">
+    <div class="sol-grid">
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">SMV/SAM CYCLE TIME REDUCTION SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><circle cx="30" cy="34" r="16" fill="none" stroke="#2f56a5" stroke-width="3"/><path d="M30 24v10l7 5" stroke="#f08922" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="54" y="20" width="24" height="30" rx="3" fill="#21b8c7" opacity=".8"/><path d="M58 28h16M58 34h16M58 40h10" stroke="#fff" stroke-width="2"/></svg>
+            <p>The basic &amp; fundamental concept on which the whole Garment/ Apparel industry works is on the basis of SAM/ SMV calculation, which is used for costing, negotiation with buyer, factory production planning, workers target, line efficiency, cost recovery and many more. wrong calculation of SAM/SAM will lead to serious consequences and huge financial losses.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about SMV/SAM cycle time reduction"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">INVENTORY/SPARES COST REDUCTION SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><rect x="14" y="26" width="22" height="22" rx="2" fill="#2f56a5"/><rect x="40" y="18" width="22" height="30" rx="2" fill="#21b8c7"/><rect x="66" y="32" width="12" height="16" rx="2" fill="#f08922"/><path d="M10 52h72" stroke="#8a8f98" stroke-width="2"/></svg>
+            <p>Inventory not only involves huge cost, the process of repairs and maintenance, ordering spares and keeping the machines running, takes a toll on the middle level managers and often all the profit of the company depends on how best the assets are utilised.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about inventory and spares cost reduction"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">DATA DIGITIZATION SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><ellipse cx="34" cy="22" rx="18" ry="7" fill="#2f56a5"/><path d="M16 22v22c0 4 8 7 18 7s18-3 18-7V22" fill="#2f56a5" opacity=".65"/><rect x="58" y="24" width="22" height="26" rx="3" fill="#21b8c7"/><path d="M62 32h14M62 38h14M62 44h9" stroke="#fff" stroke-width="2"/></svg>
+            <p>Without proper data, solving problems is like shooting off round, but with data you can accurately focus on the issues and solve them easily, digitisation of data leads to real time reports and helps the vital error avoiding framework of the factory.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about data digitization solutions"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">EFFECTIVE ASSET UTILIZATION SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><circle cx="34" cy="35" r="17" fill="none" stroke="#2f56a5" stroke-width="5"/><path d="M34 18a17 17 0 0 1 14.7 25.4" stroke="#f08922" stroke-width="5" fill="none"/><rect x="58" y="42" width="7" height="12" fill="#21b8c7"/><rect x="68" y="32" width="7" height="22" fill="#21b8c7"/><rect x="78" y="24" width="7" height="30" fill="#2f56a5"/></svg>
+            <p>Productivity depends on effective use of assets &amp; machinery and how effectively they are utilised, the biggest problem which most factories face is that every machine and asset is not used optimally.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about effective asset utilization"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">WIP MONITORING SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><path d="M12 48h66" stroke="#8a8f98" stroke-width="3"/><rect x="16" y="34" width="14" height="14" rx="2" fill="#2f56a5"/><rect x="38" y="28" width="14" height="20" rx="2" fill="#21b8c7"/><rect x="60" y="20" width="14" height="28" rx="2" fill="#f08922"/><circle cx="23" cy="56" r="4" fill="#4a4a4a"/><circle cx="67" cy="56" r="4" fill="#4a4a4a"/></svg>
+            <p>Factories spend a lot of time on firefighting and trying to solve multiple problem, without realising the fundamental root cause, which is lack of data on the shop floor, live an effective production floor production and real data are highly essential.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about WIP monitoring solutions"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">QUALITY ENGINEERING SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><path d="M45 14l24 8v16c0 14-10 22-24 26-14-4-24-12-24-26V22z" fill="#2f56a5" opacity=".85"/><path d="M34 40l8 8 16-17" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p>In several to quality audit and quality checking the creation of systems to ensure quality at source is very effective and beneficial.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about quality engineering solutions"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">MIS MANAGEMENT REPORTS AUTOMATION</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><rect x="14" y="16" width="40" height="40" rx="3" fill="#fff" stroke="#2f56a5" stroke-width="2"/><path d="M20 46l8-10 8 7 10-16" stroke="#f08922" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="60" y="22" width="18" height="28" rx="3" fill="#21b8c7"/><path d="M64 30h10M64 36h10M64 42h6" stroke="#fff" stroke-width="2"/></svg>
+            <p>Mis helps you to understand what is happening in your business, why it is happening, analysing what if scenarios and reports to help you to decide the solution. many hours from unreliable excel data and elaborate data which is not helpful in decision making.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about MIS management reports automation"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">SKILL IMPROVEMENT AND ABSENTEEISM MANAGEMENT SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><circle cx="28" cy="26" r="9" fill="#2f56a5"/><path d="M14 52c0-8 6-14 14-14s14 6 14 14z" fill="#2f56a5" opacity=".7"/><circle cx="58" cy="30" r="7" fill="#21b8c7"/><path d="M47 52c0-7 5-12 11-12s11 5 11 12z" fill="#21b8c7" opacity=".7"/><path d="M72 20l4 8 8 1-6 6 2 8-8-4-8 4 2-8-6-6 8-1z" fill="#f08922"/></svg>
+            <p>Absenteeism and retention of skilled workers can be done by proper training and incentives, a skill matrix which is transparent, accessible to all the management, will help the whole team to focus on the objectives of the management.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about skill improvement and absenteeism management"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">BOTTLE NECK &amp; ROOT CAUSE ANALYSIS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><path d="M24 16h30l-9 16v16l-12 6V32z" fill="#2f56a5" opacity=".85"/><circle cx="64" cy="40" r="13" fill="none" stroke="#f08922" stroke-width="3"/><path d="M73 49l9 9" stroke="#f08922" stroke-width="4" stroke-linecap="round"/></svg>
+            <p>For any problem solving, the exact critical point is to identify the root cause/bottleneck issues. We all grasp with 30 years of experience in the apparel industry offer our services to solve bottleneck and critical issues, through data analysis.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about bottleneck and root cause analysis"></button>
+        </div>
+      </article>
+
+      <article class="sol-card">
+        <h3 class="sol-card__head">NEEDLE TIME INCREASING SOLUTIONS</h3>
+        <div class="sol-card__body">
+          <div class="sol-card__row">
+            <svg class="sol-card__icon" viewBox="0 0 90 70"><rect width="90" height="70" rx="4" fill="#eef3f8"/><path d="M18 46h44v8H18z" fill="#2f56a5"/><path d="M22 22h34v18H22z" fill="#21b8c7"/><path d="M40 40v12" stroke="#f08922" stroke-width="3"/><circle cx="70" cy="30" r="10" fill="none" stroke="#2f56a5" stroke-width="3"/><path d="M70 23v7l5 3" stroke="#f08922" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+            <p>The value added in the sewing cycle is only the needle running time. Our solutions help to reduce other non value adding components time and increase needle running time.</p>
+          </div>
+          <button class="sol-btn" aria-label="Read more about needle time increasing solutions"></button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section> -->
 
 <!-- ================= CLIENTS ================= -->
 <section class="clients-section" aria-labelledby="clients-title">
@@ -1664,6 +2237,97 @@ restartTimer();
 </script>
       
 <script>
+      const bottlenecks = [
+  {
+    //number: "01", //label: "Material Quality",
+    title: '<span class="highlight">Human touch of cut panels  leading to stains on</span> White/delicate high fashion garments apart from crumpling and fabric integrity',
+    // summary: "Protect fabric quality from inspection to production.",
+    image: "Fabric Integrity.png",
+    // challenge: "White/delicate garment stains & crumpling.",
+    fix: "Touchless Material Movement Systems that eliminate physical handling damage."
+  },
+  {
+    //number: "02", //label: "Productivity",
+    title: '<span class="highlight">High Handling And Low Machine</span> Running Time - Low Efficiency',
+    // summary: "Keep operators sewing and reduce non-value-added time.",
+    image: "Needle - Time Maximisation.png",
+    // challenge: "Value adding elements are less and more of non value adding elements.",
+    fix: "Reduce bundle time and load Cut pieces to overhead gripper mover, increasing machine running time."
+  },
+  {
+    //number: "03", //label: "Cost Optimisation",
+    title: '<span class="highlight">Poor Line Balancing As Some</span> Wait For Work And Some Or Overloaded Untapped hidden capacity',
+    // summary: "Make production costs visible and easier to control.",
+    image: "Lean Cost Control.png",
+    // challenge: "High production costs & low efficiency.",
+    fix: "Improved line balancing with focus on bottlenecks and TOC."
+  },
+  {
+    //number: "04", //label: "Buyer Requirements",
+    title: '<span class="highlight">Buyer Compliance difficulty securing approvals for white/delicate and</span> high fashion garments and inability to match buyer price',
+    // summary: "Create traceable, audit-ready processes for global buyers.",
+    image: "Global Compliance.png",
+    // challenge: "Difficulty securing approvals for white/delicate and high fashion garments.",
+    fix: "Reduce human handling of cut garments and improved value added elements."
+  },
+  {
+    //number: "05", //label: "Standard Work",
+    title: '<span class="highlight">Operation Quality Standardisation.  Different locations and</span> different lines produce varied quality of garments',
+    // summary: "Make quality expectations consistent across operators.",
+    image: "Quality Standardisation.png",
+    // challenge: "Inconsistent operator quality.",
+    fix: "Operation digitisation with SOPs paired with training and skill improvement with digital videos."
+  },
+  {
+    //number: "06", //label: "Smart Manufacturing",
+    title: '<span class="highlight">High rework and missing pieces with fudged production reports.. Factories report as much as 10% loss</span> from cut to pack, apart from availability of verified data on hourly production',
+    // summary: "Use smart systems to support decisions and balance work.",
+    image: "Autonomous Engineering.png",
+    // challenge: "Severe shortage of skilled IEs & operators.",
+    fix: "Conveyor systems that ensures that pieces are always accounted, with data integrity."
+  }
+];
+
+const warningIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 22 21H2L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg>';
+const bulbIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M8.2 14.5a7 7 0 1 1 7.6 0c-.9.6-1.3 1.5-1.3 2.5h-5c0-1-.4-1.9-1.3-2.5Z"/><path d="M12 6v4"/></svg>';
+
+document.getElementById("cards").innerHTML = bottlenecks.map(card => `
+  <article class="bottleneck-card" style="--card-image: url('${card.image}')">
+    <div class="card-top">
+      
+    </div>
+    <h2 class="card-title">${card.title}</h2>
+    <div class="info-panel fix">
+      <h3 class="info-heading"><span class="info-icon">${bulbIcon}</span>Fix</h3>
+      <p>${card.fix}</p>
+    </div>
+  </article>
+`).join("");
+
+const animationStyle = document.createElement("style");
+animationStyle.textContent = `
+  .bottleneck-card { opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease, box-shadow .25s ease; }
+  .bottleneck-card.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .bottleneck-card { opacity: 1; transform: none; } }
+`;
+document.head.appendChild(animationStyle);
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll(".bottleneck-card").forEach(card => observer.observe(card));
+} else {
+  document.querySelectorAll(".bottleneck-card").forEach(card => card.classList.add("is-visible"));
+}
+</script>
+      
+<script>
       if ("IntersectionObserver" in window) {
       const cards = document.querySelectorAll(".solution-card");
       const style = document.createElement("style");
@@ -1705,26 +2369,6 @@ document.querySelectorAll(".logo-marquee").forEach((marquee) => {
 
   marquee.addEventListener("focusout", () => {
     track.style.animationPlayState = "";
-  });
-});
-</script>
-<script>
-// Challenges
-// The supplied design is a static six-card grid; this script adds a subtle
-// keyboard-accessible highlight interaction to each solution arrow.
-document.querySelectorAll(".challenge-card").forEach(card => {
-  const arrow = card.querySelector(".arrow");
-  if (!arrow) return;
-  arrow.setAttribute("role", "button");
-  arrow.setAttribute("tabindex", "0");
-  arrow.setAttribute("aria-label", "Highlight solution for " + card.querySelector(".content h2").textContent.trim());
-  const activate = () => card.classList.toggle("selected");
-  arrow.addEventListener("click", activate);
-  arrow.addEventListener("keydown", event => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      activate();
-    }
   });
 });
 </script>
