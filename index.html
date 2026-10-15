@@ -2056,6 +2056,7 @@ svg{
           <!-- Replace these src paths with your actual logo image paths. -->
           <img class="client-logo" src="laguna.png" alt="Laguna">
           <img class="client-logo" src="gokaldas-exports.png" alt="Gokaldas Exports">
+          <img class="client-logo" src="bhartiya.png" alt="Bhartiya.png">
           <img class="client-logo" src="magnum-clothing.png" alt="Magnum Clothing">
           <img class="client-logo" src="aditya-birla.png" alt="Aditya Birla Fashion and Retail">
           <img class="client-logo" src="aquarelle.png" alt="Aquarelle">
@@ -2068,6 +2069,7 @@ svg{
         <div class="logo-group" aria-hidden="true">
           <img class="client-logo" src="laguna.png" alt="">
           <img class="client-logo" src="gokaldas-exports.png" alt="">
+          <img class="client-logo" src="bhartiya.png" alt="">
           <img class="client-logo" src="magnum-clothing.png" alt="">
           <img class="client-logo" src="aditya-birla.png" alt="">
           <img class="client-logo" src="aquarelle.png" alt="">
@@ -2081,7 +2083,7 @@ svg{
   </div>
 </section>
 
-      <!-- ================= TESTIMONIALS ================= -->
+<!-- ================= TESTIMONIALS ================= -->
 <section class="testi" id="testimonials">
   <div class="container">
     <h2 class="sec-title">Customer say some words</h2>
@@ -2277,45 +2279,7 @@ svg{
   }, 6000);
 
   /* ---------- Client logo slider ---------- */
-  function logo(name, color, shape){
-    return '<a href="#" aria-label="'+name+'"><svg viewBox="0 0 140 56" role="img">'+shape+
-      '<text x="70" y="50" text-anchor="middle" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="'+color+'">'+name+'</text>'+
-      '</svg></a>';
-  }
-  var clientSets = [
-    [ logo('AGILEX','#c0392b','<path d="M70 6l16 28H54z" fill="#c0392b"/>'),
-      logo('LAGUNA','#2c3e50','<rect x="52" y="8" width="36" height="26" fill="none" stroke="#2c3e50" stroke-width="4"/><rect x="60" y="16" width="20" height="10" fill="#2c3e50"/>'),
-      logo('GOLDEN EXPORTS','#16a085','<circle cx="70" cy="21" r="13" fill="none" stroke="#16a085" stroke-width="4"/><path d="M63 21h14" stroke="#16a085" stroke-width="4"/>'),
-      logo('DATA MILLS','#e74c3c','<rect x="54" y="8" width="32" height="26" rx="3" fill="#e74c3c"/><path d="M60 28l7-10 6 7 6-9" stroke="#fff" stroke-width="2.5" fill="none"/>'),
-      logo('ADAMO','#2c3e50','<path d="M56 34L70 8l14 26z" fill="none" stroke="#2c3e50" stroke-width="4"/>') ],
-    [ logo('TEXWEAVE','#8e44ad','<circle cx="70" cy="21" r="12" fill="#8e44ad" opacity=".85"/>'),
-      logo('NORTHFIELD','#2980b9','<rect x="55" y="10" width="30" height="22" rx="11" fill="#2980b9"/>'),
-      logo('PRIME STITCH','#d35400','<path d="M58 21h24M70 9v24" stroke="#d35400" stroke-width="5"/>'),
-      logo('VERTEX','#27ae60','<path d="M56 10h28l-14 24z" fill="#27ae60"/>'),
-      logo('CLOUDKNIT','#34495e','<ellipse cx="70" cy="21" rx="16" ry="10" fill="#34495e" opacity=".8"/>') ]
-  ];
-
-  var clientRow = document.getElementById('clientRow');
-  var clientDots = document.getElementById('clientDots');
-  var clientPage = 0;
-
-  function renderClients(){
-    clientRow.style.opacity = 0;
-    setTimeout(function(){
-      clientRow.innerHTML = clientSets[clientPage].join('');
-      clientRow.style.opacity = 1;
-    }, 200);
-    clientDots.innerHTML = '';
-    clientSets.forEach(function(_, i){
-      var b = document.createElement('button');
-      b.className = 'dot' + (i===clientPage ? ' active' : '');
-      b.setAttribute('aria-label','Client logos page '+(i+1));
-      b.addEventListener('click', function(){ clientPage = i; renderClients(); });
-      clientDots.appendChild(b);
-    });
-  }
-  renderClients();
-  setInterval(function(){ clientPage = (clientPage+1) % clientSets.length; renderClients(); }, 5000);
+  
 
   /* ---------- Keep layout correct on resize ---------- */
   var rt;
