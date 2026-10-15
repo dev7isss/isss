@@ -552,13 +552,110 @@ h1,h2,h3,h4,h5{margin:0;font-weight:700;line-height:1.3}
 /* ============================================================
    CLIENTS
    ============================================================ */
-.clients{padding:40px 0 34px;background:var(--white)}
-.client-row{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
-  max-width:1000px;margin:0 auto;transition:opacity .4s}
-.client-row img,.client-row svg{height:46px;width:auto;filter:grayscale(1);opacity:.85;transition:.3s}
-.client-row a:hover svg{filter:none;opacity:1}
-.clients .dot{background:#c9ced6}
-.clients .dot.active{background:var(--teal)}
+.clients-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(42px, 3.5vw, 76px) 20px clamp(35px, 3.5vw, 58px);
+  background: linear-gradient(135deg, #fff 0%, #f5fcfe 58%, #eaf7fb 100%);
+}
+
+.clients-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .28;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(22,183,200,.38) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(90deg, #000, transparent 25%, transparent 75%, #000);
+}
+
+.clients-container {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 11px 0 0;
+  text-align: center;
+  color: var(--orange);
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+
+h1 span { color: var(--navy); }
+
+.title-line {
+  width: 76px;
+  height: 4px;
+  margin: 17px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--orange), #eaf7fb);
+}
+
+.logo-marquee {
+  width: 100%;
+  margin-top: 35px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: client-scroll 34s linear infinite;
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: clamp(34px, 5vw, 76px);
+  padding: 8px clamp(24px, 3vw, 45px);
+  min-width: max-content;
+}
+
+/* Logos are displayed directly on the section background, with no card boxes. */
+.client-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 170px;
+  height: 76px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@keyframes client-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 700px) {
+  .clients-section { padding: 38px 12px; }
+  .intro { font-size: 13px; }
+  .logo-marquee { margin-top: 26px; }
+  .logo-group { gap: 28px; padding: 8px 18px; }
+  .client-logo { max-width: 140px; height: 64px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; transform: none; }
+  .logo-group[aria-hidden="true"] { display: none; }
+}
 
 /* ============================================================
    FOOTER
@@ -1984,14 +2081,42 @@ svg{
 </section> -->
 
 <!-- ================= CLIENTS ================= -->
-<!-- <section class="clients" id="clients">
-  <div class="container">
-    <h2 class="sec-title">Our Clients</h2>
-    <div class="client-row" id="clientRow"></div>
-    <div class="dots" id="clientDots"></div>
-  </div>
-</section> -->
+<section class="clients-section" aria-labelledby="clients-title">
+  <div class="clients-container">
+    <h1 id="clients-title">Our <span>Clients</span></h1>
+    <div class="title-line" aria-hidden="true"></div>
 
+    <div class="logo-marquee" aria-label="Client logos scrolling automatically">
+      <div class="logo-track">
+        <div class="logo-group">
+          <!-- Replace these src paths with your actual logo image paths. -->
+          <img class="client-logo" src="laguna.png" alt="Laguna">
+          <img class="client-logo" src="gokaldas-exports.png" alt="Gokaldas Exports">
+          <img class="client-logo" src="magnum-clothing.png" alt="Magnum Clothing">
+          <img class="client-logo" src="aditya-birla.png" alt="Aditya Birla Fashion and Retail">
+          <img class="client-logo" src="aquarelle.png" alt="Aquarelle">
+          <img class="client-logo" src="armstrong.png" alt="Armstrong">
+          <img class="client-logo" src="penguin_apparels.png" alt="penguin_apparels">
+          <img class="client-logo" src="cotton_blossom.png" alt="cotton_blossom">
+          <img class="client-logo" src="shahi.png" alt="shahi">
+        </div>
+        <!-- Duplicate sequence for seamless looping. Keep the same logo order. -->
+        <div class="logo-group" aria-hidden="true">
+          <img class="client-logo" src="laguna.png" alt="">
+          <img class="client-logo" src="gokaldas-exports.png" alt="">
+          <img class="client-logo" src="magnum-clothing.png" alt="">
+          <img class="client-logo" src="aditya-birla.png" alt="">
+          <img class="client-logo" src="aquarelle.png" alt="">
+          <img class="client-logo" src="armstrong.png" alt="">
+          <img class="client-logo" src="penguin-apparels.png" alt="">
+          <img class="client-logo" src="cotton-blossom.png" alt="">
+          <img class="client-logo" src="shahi.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      
 <!-- ================= FOOTER ================= -->
 <footer class="footer" id="contact">
   <div class="container">
@@ -2196,6 +2321,7 @@ svg{
   });
 })();
 </script>
+      
 <script>
       const bottlenecks = [
   {
@@ -2286,6 +2412,7 @@ if ("IntersectionObserver" in window) {
   document.querySelectorAll(".bottleneck-card").forEach(card => card.classList.add("is-visible"));
 }
 </script>
+      
 <script>
       if ("IntersectionObserver" in window) {
       const cards = document.querySelectorAll(".solution-card");
@@ -2306,6 +2433,31 @@ if ("IntersectionObserver" in window) {
       }, {threshold: 0.12});
       cards.forEach(card => observer.observe(card));
       }
+</script>
+      
+<script>
+      // The carousel scrolls continuously using CSS.
+// Pause while hovered or keyboard-focused for easier viewing.
+document.querySelectorAll(".logo-marquee").forEach((marquee) => {
+  const track = marquee.querySelector(".logo-track");
+  if (!track) return;
+
+  marquee.addEventListener("mouseenter", () => {
+    track.style.animationPlayState = "paused";
+  });
+
+  marquee.addEventListener("mouseleave", () => {
+    track.style.animationPlayState = "";
+  });
+
+  marquee.addEventListener("focusin", () => {
+    track.style.animationPlayState = "paused";
+  });
+
+  marquee.addEventListener("focusout", () => {
+    track.style.animationPlayState = "";
+  });
+});
 </script>
 </body>
 </html>
